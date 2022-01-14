@@ -1,0 +1,214 @@
+@charset "utf-8";
+
+@media screen and (max-width:1024px) {
+    /* 헤더 메뉴부분 */
+    #header #nav {
+        position: fixed; 
+        top:0; right:0px; left:100%; bottom:0;
+        transform:translateY(0%);
+        font-size:18px;
+        color:#1e1e1e;
+        background-color: rgba(0,0,0,0.5);
+        overflow-y : auto;
+        overflow-x: hidden;
+        /* 
+            height:100%로 주게되면 overflow auto가 오류가 떠서 bottom:0px로 해두고
+            top:0px~bottom:0px까지 개념으로 생각하면됨
+        */
+        padding-top:50px;
+    }
+    #header #nav .depth1 {
+        position:absolute; 
+        top:0; bottom:0; right:-200px;
+        width:200px;
+        height:100%;
+        background-color: white;
+        padding-top: 50px;
+    }
+    #header #nav .depth1 > li { float:none; position:relative; }
+    #header #nav .depth1 > li > a { padding:20px 40px; display:block; text-align: center;}
+    #header #nav .depth1 > li:hover > a { color: #00529b; }
+    #header .depth2 { 
+        position:static; 
+        top:100%; left:0; 
+        background:#555; 
+        font-size:14px;
+        color:#fff; 
+        width:100%; 
+        text-align:center; 
+        display:none; 
+    }
+
+    /* 헤더 햄버거작업 */
+    #header .opennav {
+        display: block;
+        position: absolute;
+        top:50%; right:20px;
+        transform: translateY(-50%);
+        font-size: 30px;
+        transition: all 0.3;
+    }
+    #header .opennav.on {
+        position: fixed;
+        top:20px; right:20px;
+        transform: translateY(0%);
+        z-index: 999999999;
+    }
+
+    /* 헤더 검색창 */
+    #header .search {
+        position:fixed; 
+        right:70px;
+        top:60px; 
+        transform:translateY(0%);
+        font-size:28px;
+        z-index: 99;
+    }
+    #header .search #sbox { 
+        border:0px solid black; 
+        text-indent:1em; 
+        width:0px;
+        height:30px;
+        overflow: hidden;
+        outline: none;
+        transition: all 0.5s;
+        position:absolute;
+        top:0px; right:40px;
+    }
+    #header .search.on #sbox {
+        width:300px;
+        border:1px solid black;
+    }
+
+    /* article1 슬라이더 구역 */
+    .article1 .slick-dots li { 
+        display:inline-block; 
+        margin:0 5px; 
+        width:80px;
+        height:2px;
+        background: #999;
+        position:relative;
+    }
+    .article1 .slick-dots li.slick-active button {  
+        width:80x;
+        transition: all 3s;
+    }
+    .article1 .plpa {
+        font-size: 20px;
+        color:white;
+        cursor: pointer;
+        position:absolute;
+        bottom:22px; left:50%;
+        transform:translate(140px);
+    }
+
+    /* article5 구역 */
+    .article5 .row > div { width:100%; float:left; }
+    .article5 .row > div.cs_board { padding-right:0px; }
+    .article5 .row > div.cs_center { 
+        border:1px solid #ddd;
+        padding:30px; 
+        margin:30px 0;
+    }
+    .article5 .cs_center li::before {display: none;}
+    .article5 .row div.cs_movie { padding-left:0px; text-align: center; }
+
+    .youtubeVideoInner {top:25% !important;}
+
+    /* 풋터구역 */
+    #footer .info span {padding:5px 20px; display: block;}
+}
+
+
+@media screen and (max-width:768px) {
+    #header .search #sbox {
+        top:63px; right:0px;
+        height:50px;
+    }
+    
+    /* 슬라이더구역 */
+    #section .article1 .slick-slide .slide_text h2 { 
+        font-size: 25px;
+        line-height: 25px;
+        font-weight: 800;
+        transform: unset;
+        opacity: 1;
+        transition: unset;
+    }
+    .article1 .slick-slide .slide_text p {
+        display: none;
+    }
+    .article1 .slide {height:360px;}
+
+    /* article2 구역 */
+    .article2 li { 
+        height:260px; 
+        float:left; 
+        width:49%; 
+        margin-right:2%; 
+        color:#fff;
+        position:relative; 
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size:cover;
+        transition: all 1s;
+        opacity: 1;
+        margin-bottom:10px;
+    }
+    .article2 li:hover > div { bottom:25px; }
+    .article2 li:nth-child(1) { 
+        background-image:url(../img/what1.jpg); 
+        transform: translate(0%, 0); 
+    }
+    .article2 li:nth-child(2) { 
+        background-image:url(../img/what2.jpg);
+        transform: translate(0%, 0); 
+        margin-right:0;
+    }
+    .article2 li:nth-child(3) { 
+        background-image:url(../img/what3.jpg);
+        transform: translate(0%, 0);
+    }
+    .article2 li:nth-child(4) { 
+        background-image:url(../img/what4.jpg); 
+        margin-right:0; 
+        transform: translate(0%, 0);
+    }
+    .article2 li > div { 
+        text-align: center;
+    }
+    .article2 li > div > p { display: none; }
+    .article2 li > div > a {  
+        display: inline-block; 
+        padding: 10px 20px;
+        border: 1px solid rgba(255,255,255,0.5); 
+        font-size: 11px; 
+        font-weight: 600 !important;
+        margin-top:20px;
+    }
+
+
+    /* 전체적 h2 fontsize 조절 */
+    #section h2 {
+        font-size: 25px;
+        padding:30px 0 10px;
+    }
+
+    .article3 {margin-top:30px; padding:50px 0;}
+
+    /* article4 구역 */
+    .article4 li {
+        float:left; width:49%;
+        margin-right:0%;
+        margin-bottom:20px; 
+        border:1px solid #999;
+        text-align:center;
+        transform:scale(1);
+        opacity: 1;
+    }
+    .article4 li:nth-child(3n) { margin-right:0 }
+    .article4 li:nth-child(odd) { margin-right:2% }
+    .article4 li p { display: none;}
+
+    
+}
